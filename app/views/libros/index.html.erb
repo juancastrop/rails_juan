@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Libros</h1>
+<%= link_to "Crear nuevo libro", new_libro_path %>
+<br></br><hr></hr>
 
 <div id="libros">
   <% @libros.each do |libro| %>

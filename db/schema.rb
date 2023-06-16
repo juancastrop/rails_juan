@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_015608) do
   create_table "libros", force: :cascade do |t|
     t.string "nombre"
     t.string "descripcion"
+    t.decimal "precio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "paginas"

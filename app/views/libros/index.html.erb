@@ -4,13 +4,46 @@
 <%= link_to "Crear nuevo libro", new_libro_path %>
 <br></br><hr></hr>
 
+<!-- Table -->
+<section>
+    <h2>Table</h2>
+    <h3>Default</h3>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                <th>id</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Paginas</th>
+                    <th>Precio</th>
+                    <th>Show</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% @libros.each do |libro| %>
+                <tr>
+                <td><%= libro.id %> </td>
+                    <td><%= libro.nombre %> </td>
+                    <td><%= libro.descripcion %> </td>
+                    <td><%= libro.paginas %> </td>
+                    <td><%= libro.precio %> </td>
+                    <td><%= link_to "Ver el libro", libro %> </td>
+                    <td><%= link_to "Edit this libro", edit_libro_path(libro) %></td>
+                    <td><%= button_to "Destroy this libro", libro, method: :delete %></td>
+
+                </tr>            
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+
+</section>
 <div id="libros">
   <% @libros.each do |libro| %>
-    <%= render libro %>
-    <p>
-      <%= link_to "Show this libro", libro %>
-    </p>
-  <% end %>
-</div>
+    <!--<%= render libro %>-->
 
-<%= link_to "New libro", new_libro_path %>
+    <% end %>
+</div>
